@@ -7,14 +7,31 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Booze and Mescaline</title>
+	<style type="text/css">
+body {
+	margin: 5em 5em 5em 5em;
+}
+#logo {
+	float: right;
+}
+#posts {
+	width: 40em;
+}
+.post:first-letter {
+	font-weight: bold;
+}
+	</style>
 </head>
 <body>
 
+<img id="logo" src="/static/mescaline.png" alt="mescaline"/>
+<div id="posts">
 {% for post in posts %}
 	<h1>{{ post.title }}</h1>
 	<p>{{ post.date|date:"l F j, Y - g:i A" }}</p>
-	{{ post.text|markdown }}
+	<div class="post">{{ post.text|markdown }}</div>
 {% endfor %}
+</div>
 
 </body>
 </html>
