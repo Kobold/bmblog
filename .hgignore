@@ -1,2 +1,4 @@
+posts.db
+
 syntax: glob
 *.pyc
