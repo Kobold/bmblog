@@ -1,4 +1,6 @@
-from django.http import HttpResponse
+from django.shortcuts import render_to_response
+from bmblog.posts.models import Post
 
-def hello_world(request):
-    return HttpResponse("<html><body>Hello world.</body></html>")
+def main(request):
+    posts = Post.objects.all()
+    return render_to_response('main.html', {'posts': posts})
