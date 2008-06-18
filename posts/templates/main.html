@@ -17,6 +17,9 @@ body {
 #posts {
 	width: 40em;
 }
+.post_header {
+	text-align: center;
+}
 .post:first-letter {
 	font-weight: bold;
 }
@@ -27,8 +30,10 @@ body {
 <img id="logo" src="/static/mescaline.png" alt="mescaline"/>
 <div id="posts">
 {% for post in posts %}
-	<h1>{{ post.title }}</h1>
-	<p>{{ post.date|date:"l F j, Y - g:i A" }}</p>
+	<div class="post_header">
+		<h1>{{ post.title }}</h1>
+		<p>{{ post.date|date:"F Y" }}</p>
+	</div>
 	<div class="post">{{ post.text|markdown }}</div>
 {% endfor %}
 </div>
