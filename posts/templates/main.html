@@ -1,42 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-   "http://www.w3.org/TR/html4/strict.dtd">
-
+{% extends "base.html" %}
 {% load markup %}
 
-<html lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Booze and Mescaline</title>
-	<style type="text/css">
-body {
-	margin: 5em 5em 5em 5em;
-}
-#logo {
-	float: right;
-}
-#posts {
-	width: 40em;
-}
-.post_header {
-	text-align: center;
-}
-.post:first-letter {
-	font-weight: bold;
-}
-	</style>
-</head>
-<body>
-
-<img id="logo" src="/static/mescaline.png" alt="mescaline"/>
-<div id="posts">
+{% block content %}
 {% for post in posts %}
 	<div class="post_header">
-		<h1>{{ post.title }}</h1>
-		<p>{{ post.date|date:"F Y" }}</p>
+		<h1><a href="/post/{{ post.slug }}/">{{ post.title }}</a></h1>
+		<p>{{ post.date|date:"F j, Y" }}</p>
 	</div>
 	<div class="post">{{ post.text|markdown }}</div>
 {% endfor %}
-</div>
-
-</body>
-</html>
+{% endblock %}

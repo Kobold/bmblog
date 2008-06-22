@@ -1,0 +1,31 @@
+body {
+	margin: 5em 5em 5em 5em;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: red;
+}
+
+#logo {
+	float: right;
+}
+
+#content {
+	width: 40em;
+}
+
+.post_header {
+	text-align: center;
+}
+
+.post:first-letter {
+	font-weight: bold;
+}
