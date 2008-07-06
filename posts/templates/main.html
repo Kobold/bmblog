@@ -4,7 +4,7 @@
 {% block content %}
 {% for post in posts %}
 	<div class="post_header">
-		<h1><a href="/post/{{ post.slug }}/">{{ post.title }}</a></h1>
+		<h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
 		<p>{{ post.date|date:"F j, Y" }}</p>
 	</div>
 	<div class="post">{{ post.text|markdown }}</div>

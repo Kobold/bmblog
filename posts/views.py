@@ -1,6 +1,7 @@
-from django.http import HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render_to_response
-from bmblog.posts.models import Post
+from feeds import PostsFeed
+from models import Post
 
 def main(request):
     posts = Post.objects.all()
@@ -12,3 +13,9 @@ def post(request, slug):
             {'post': Post.objects.get(slug=slug)})
     except Post.DoesNotExist:
         return HttpResponseNotFound()
+
+def feed(request):
+    feedgen = PostsFeed('', request).get_feed('')
+    response = HttpResponse(mimetype=feedgen.mime_type)
+    feedgen.write(response, 'utf-8')
+    return response
