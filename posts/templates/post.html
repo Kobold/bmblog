@@ -1,10 +1,7 @@
 {% extends "base.html" %}
-{% load markup %}
 
 {% block title %}{{ post.title }} - Booze and Mescaline{% endblock %}
 
 {% block content %}
-<div class="post">{{ post.text|markdown }}</div>
-
-<p>{{ post.date|date:"F j, Y" }}</p>
+{% include "post_body.html" %}
 {% endblock %}

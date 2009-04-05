@@ -26,6 +26,14 @@ h1 a:hover {
 	text-align: center;
 }
 
+.post_header h1 {
+    font-family:"Gill Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
 .post:first-letter {
 	font-weight: bold;
+}
+
+.post {
+    margin-bottom: 7em;
 }
