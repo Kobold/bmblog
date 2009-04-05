@@ -1,2 +1,3 @@
 posts.db
+settings_local.py
 *.pyc
