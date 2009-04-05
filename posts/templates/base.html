@@ -7,12 +7,19 @@
 	<title>{% block title %}Booze and Mescaline{% endblock %}</title>
 	<link rel="alternate" type="application/atom+xml" href="/feed/">
 	<link rel="stylesheet" type="text/css" href="/static/stylesheet.css" />
+	<link rel="stylesheet" href="/static/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="/static/print.css" type="text/css" media="print">
+	<!--[if IE]><link rel="stylesheet" href="/static/ie.css" type="text/css" media="screen, projection"><![endif]-->
 </head>
 <body>
 
-<a href="/"><img id="logo" src="/static/mescaline.png" alt="mescaline"/></a>
-<div id="content">
-{% block content %}{% endblock %}
+<div class="container">
+	<div class="span-16 append-4">
+	{% block content %}{% endblock %}
+	</div>
+	<div class="span-4 last">
+		<a href="/"><img id="logo" src="/static/mescaline.png" alt="mescaline"/></a>
+	</div>
 </div>
 
 </body>
