@@ -79,3 +79,9 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'bmblog.posts',
 )
+
+# import a per-host settings file to override specific settings
+try:
+    from settings_local import *
+except:
+    pass
