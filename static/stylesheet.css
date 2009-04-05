@@ -2,6 +2,12 @@
 	padding-top: 5em;
 }
 
+#sidebar {
+    margin: 0px auto;
+    text-align: center;
+    width: 200px;
+}
+
 a:link {
     color: black;
 }

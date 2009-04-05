@@ -78,6 +78,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'bmblog.posts',
+    'flatblocks',
 )
 
 # import a per-host settings file to override specific settings

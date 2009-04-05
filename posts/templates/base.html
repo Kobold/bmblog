@@ -1,3 +1,4 @@
+{% load flatblock_tags %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
    "http://www.w3.org/TR/html4/strict.dtd">
 
@@ -19,6 +20,9 @@
 	</div>
 	<div class="span-4 last">
 		<a href="/"><img id="logo" src="/static/mescaline.png" alt="mescaline"/></a>
+		<div id="sidebar">
+		{% flatblock "sidebar" %}
+		</div>
 	</div>
 </div>
 
