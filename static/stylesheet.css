@@ -3,9 +3,13 @@ padding-top: 5em;
 }
 
 #sidebar {
-margin: 0px auto;
+margin: 20px auto;
 text-align: center;
 width: 200px;
+}
+
+#sidebar ul {
+list-style-type: none;
 }
 
 a:link {
