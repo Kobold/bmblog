@@ -1,4 +1,5 @@
 # Django settings for bmblog project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -28,6 +29,7 @@ TIME_ZONE = 'America/Detroit'
 LANGUAGE_CODE = 'en-us'
 
 SITE_ID = 1
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -62,18 +64,20 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.doc.XViewMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
 ROOT_URLCONF = 'bmblog.urls'
 
 TEMPLATE_DIRS = (
-    '/Users/kobold/bmblog/posts/templates',
+    os.path.join(SITE_ROOT, 'templates'),
 )
 
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django.contrib.flatpages',
     'django.contrib.markup',
     'django.contrib.sessions',
     'django.contrib.sites',

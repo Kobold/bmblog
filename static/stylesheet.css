@@ -28,7 +28,7 @@ h1 a:hover {
 text-decoration: underline;
 }
 
-.header {
+h1, .header {
 text-align: center;
 }
 
