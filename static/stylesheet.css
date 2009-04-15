@@ -1,7 +1,7 @@
 .container p, .container li {
-font-family: Georgia,"Times New Roman",Times,serif;
-font-size: 11pt;
-line-height: 1.65em;
+font-family: Arial,sans-serif;
+font-size: 13px;
+line-height: 25px;
 }
 
 .container {
