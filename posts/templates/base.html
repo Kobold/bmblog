@@ -6,10 +6,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>{% block title %}Booze and Mescaline{% endblock %}</title>
   <link rel="alternate" type="application/atom+xml" href="/feed/">
-  <link rel="stylesheet" type="text/css" href="/static/stylesheet.css" />
-  <link rel="stylesheet" href="/static/screen.css" type="text/css" media="screen, projection">
-  <link rel="stylesheet" href="/static/print.css" type="text/css" media="print">
-  <!--[if IE]><link rel="stylesheet" href="/static/ie.css" type="text/css" media="screen, projection"><![endif]-->
+  <link rel="stylesheet" type="text/css" href="/static/stylesheet.css">
   <script type="text/javascript">
   var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
   document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -22,27 +19,27 @@
 </head>
 <body>
 
-<div class="container">
-  <div class="span-16 append-4">
-  {% block content %}{% endblock %}
+<div id="content">
+{% block content %}{% endblock %}
+</div>
+<div id="sidebar">
+  <a href="/"><img id="logo" src="/static/mescaline.png" alt="mescaline"/></a>
+  <div class="section">
+    <h1>projects</h1>
+    <ul>
+      <li><a href="http://sha1.us">sha1.us</a><br>a git-like url shortening service</li>
+    </ul>
   </div>
-  <div class="span-4 last">
-    <a href="/"><img id="logo" src="/static/mescaline.png" alt="mescaline"/></a>
-    <div id="sidebar">
-      <strong>projects</strong>
-      <ul>
-        <li><a href="http://sha1.us">sha1.us</a><br>a git-like url shortening service</li>
-      </ul>
-      
-      <strong>other stuff</strong>
-      <ul>
-        <li><a href="http://delicious.com/Kobold">delicious</a></li>
-        <li><a href="http://www.last.fm/user/pbkobold">last.fm</a></li>
-        <li><a href="http://www.reddit.com/user/pbkobold/">reddit</a></li>
-        <li><a href="http://bitbucket.org/Kobold/">bitbucket</a></li>
-        <li><a href="http://github.com/Kobold">github</a></li>
-      </ul>
-    </div>
+  
+  <div class="section">
+    <h1>other stuff</h1>
+    <ul>
+      <li><a href="http://delicious.com/Kobold">delicious</a></li>
+      <li><a href="http://www.last.fm/user/pbkobold">last.fm</a></li>
+      <li><a href="http://www.reddit.com/user/pbkobold/">reddit</a></li>
+      <li><a href="http://bitbucket.org/Kobold/">bitbucket</a></li>
+      <li><a href="http://github.com/Kobold">github</a></li>
+    </ul>
   </div>
 </div>
 
