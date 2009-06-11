@@ -6,29 +6,27 @@ import markdown
 import operator
 import os
 
-PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
-ENVIRONMENT = Environment(
-    loader=FileSystemLoader(os.path.join(PROJECT_ROOT, 'templates')))
 
-# in memory list of posts that is loaded at startup
-posts = []
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+TEMPLATE_ROOT = os.path.join(PROJECT_ROOT, 'templates')
+
+
+environment = Environment(loader=FileSystemLoader(TEMPLATE_ROOT))
+posts = [] # in memory list of posts that is loaded at startup
+
 
 def date(value, format='%B %e, %Y'):
+    """Nice formatting for datetime strings."""
     return value.strftime(format)
-ENVIRONMENT.filters['date'] = date
-
-def render_template(name, variables):
-    """Renders the template ``name`` using ``variables``."""
-    template = ENVIRONMENT.get_template(name)
-    return template.render(**variables)
+environment.filters['date'] = date
 
 
 class Blog(object):
+    @cherrypy.expose
     def index(self):
-        return render_template('index.html', {
-            'posts': posts,
-        })
-    index.exposed = True
+        template = environment.get_template('index.html')
+        return template.render(posts=posts)
+
 
 # load the posts on startup
 post_directory = os.environ['BMBLOG_POST_DIRECTORY']
