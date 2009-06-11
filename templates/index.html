@@ -4,11 +4,13 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>{{ title }} | Posts</title>
+	<title>Posts</title>
 </head>
 <body>
-  <h1>{{ title }}</h1>
-  <p>{{ date }}</p>
-  {{ post }}
+  {% for post in posts %}
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.date }}</p>
+    {{ post.body }}
+  {% endfor %}
 </body>
 </html>
