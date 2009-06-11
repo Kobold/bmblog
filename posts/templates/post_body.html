@@ -1,7 +1,0 @@
-{% load markup %}
-
-<div class="header">
-  <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
-  {{ post.date|date:"F j, Y" }}
-</div>
-<div class="post">{{ post.text|markdown }}</div>
