@@ -37,4 +37,12 @@ for f in post_files:
         'body': html,
     })
 
-cherrypy.quickstart(Blog())
+if __name__ == '__main__':
+    conf = {
+        '/': {'tools.staticdir.root': PROJECT_ROOT},
+        '/static': {
+            'tools.staticdir.on': True,
+            'tools.staticdir.dir': 'static',
+        },
+    }
+    cherrypy.quickstart(Blog(), config=conf)
