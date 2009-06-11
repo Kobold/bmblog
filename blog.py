@@ -34,7 +34,8 @@ post_files = [f for f in os.listdir(post_directory)
                 if f.endswith('.markdown')]
 for f in post_files:
     md = markdown.Markdown(extensions=['meta'])
-    html = md.convert(file(os.path.join(post_directory, f)).read())
+    text = file(os.path.join(post_directory, f)).read().decode('utf-8')
+    html = md.convert(text)
     posts.append({
         'title': md.Meta['title'][0],
         'date': dateutil.parser.parse(md.Meta['date'][0]),
@@ -46,7 +47,11 @@ for f in post_files:
 
 if __name__ == '__main__':
     conf = {
-        '/': {'tools.staticdir.root': PROJECT_ROOT},
+        '/': {
+            'tools.encode.on': True,
+            'tools.encode.encoding': 'utf8',
+            'tools.staticdir.root': PROJECT_ROOT
+        },
         '/static': {
             'tools.staticdir.on': True,
             'tools.staticdir.dir': 'static',
