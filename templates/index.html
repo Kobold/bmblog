@@ -3,15 +3,55 @@
 
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Posts</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Booze and Mescaline</title>
+  <link rel="stylesheet" type="text/css" href="/static/stylesheet.css">
+  
+  <meta http-equiv="x-xrds-location" content="http://claimid.com/kobold/xrds">
+  <link rel="openid.server" href="https://openid.claimid.com/server">
+  <link rel="openid.delegate" href="https://openid.claimid.com/kobold">
 </head>
 <body>
-  <img id="logo" src="/static/mescaline.png" alt="mescaline">
+
+<div id="content">
   {% for post in posts %}
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.date }}</p>
-    {{ post.body }}
+    <div class="header">
+      <h1>{{ post.title }}</h1>
+      <p>{{ post.date }}</p>
+    </div>
+    <div class="post">{{ post.body }}</div>
   {% endfor %}
+</div>
+<div id="sidebar">
+  <a href="/"><img id="logo" src="/static/mescaline.png" alt="mescaline"/></a>
+  <div class="section">
+    <h1>projects</h1>
+    <ul>
+      <li><a href="http://sha1.us">sha1.us</a><br>a git-like url shortening service</li>
+    </ul>
+  </div>
+  
+  <div class="section">
+    <h1>other stuff</h1>
+    <ul>
+      <li><a href="http://delicious.com/Kobold">delicious</a></li>
+      <li><a href="http://www.last.fm/user/pbkobold">last.fm</a></li>
+      <li><a href="http://www.reddit.com/user/pbkobold/">reddit</a></li>
+      <li><a href="http://bitbucket.org/Kobold/">bitbucket</a></li>
+      <li><a href="http://github.com/Kobold">github</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8292614-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
 </body>
 </html>
