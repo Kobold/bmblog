@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-{% load markup %}
-
-{% block title %}{{ flatpage.title }} - Booze and Mescaline{% endblock %}
-
-{% block content %}
-<h1>{{ flatpage.title }}</h1>
-{{ flatpage.content|markdown }}
-{% endblock %}
