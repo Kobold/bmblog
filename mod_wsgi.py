@@ -2,10 +2,17 @@
 import site
 site.addsitedir('/home/admin/domains/boozeandmescaline.com/bmblog2-virtualenv/lib/python2.5/site-packages')
 
-from blog import Blog
-import cherrypy
+# add the directory with the blog module to our path
 import sys
-sys.stdout = sys.stderr
+sys.path.append('/home/admin/domains/boozeandmescaline.com/bmblog2')
 
+# configure the location of the posts directory
+import os
+os.environ['BMBLOG_POST_DIRECTORY'] = '/home/admin/domains/boozeandmescaline.com/bmblog-posts'
+
+from blog import Blog, configuration
+import cherrypy
+
+sys.stdout = sys.stderr
 cherrypy.config.update({'environment': 'embedded'})
-application = cherrypy.Application(Blog(), None)
+application = cherrypy.Application(Blog(), config=configuration)

@@ -55,16 +55,17 @@ for f in post_files:
 # display posts nicely in chronological order
 posts.sort(key=operator.itemgetter('date'), reverse=True)
 
+configuration = {
+    '/': {
+        'tools.encode.on': True,
+        'tools.encode.encoding': 'utf8',
+        'tools.staticdir.root': PROJECT_ROOT
+    },
+    '/static': {
+        'tools.staticdir.on': True,
+        'tools.staticdir.dir': 'static',
+    },
+}
+
 if __name__ == '__main__':
-    conf = {
-        '/': {
-            'tools.encode.on': True,
-            'tools.encode.encoding': 'utf8',
-            'tools.staticdir.root': PROJECT_ROOT
-        },
-        '/static': {
-            'tools.staticdir.on': True,
-            'tools.staticdir.dir': 'static',
-        },
-    }
-    cherrypy.quickstart(Blog(), config=conf)
+    cherrypy.quickstart(Blog(), config=configuration)
