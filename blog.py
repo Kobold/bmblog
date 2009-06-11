@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from jinja2 import Environment, FileSystemLoader
 import cherrypy
+import markdown
 import os
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
@@ -16,8 +17,13 @@ def render_template(name, variables):
 
 class Blog(object):
     def index(self):
+        md = markdown.Markdown(extensions=['meta'])
+        text = file('/Users/kobold/test_data/article.markdown').read()
+        html = md.convert(text)
         return render_template('index.html', {
-            'phrase': "Hello world!",
+            'title': md.Meta['title'][0],
+            'date': md.Meta['date'][0],
+            'post': html,
         })
     index.exposed = True
 
