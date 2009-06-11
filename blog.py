@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 from jinja2 import Environment, FileSystemLoader
 import cherrypy
+import dateutil.parser
 import markdown
+import operator
 import os
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
@@ -10,6 +12,10 @@ ENVIRONMENT = Environment(
 
 # in memory list of posts that is loaded at startup
 posts = []
+
+def date(value, format='%B %e, %Y'):
+    return value.strftime(format)
+ENVIRONMENT.filters['date'] = date
 
 def render_template(name, variables):
     """Renders the template ``name`` using ``variables``."""
@@ -33,9 +39,12 @@ for f in post_files:
     html = md.convert(file(os.path.join(post_directory, f)).read())
     posts.append({
         'title': md.Meta['title'][0],
-        'date': md.Meta['date'][0],
+        'date': dateutil.parser.parse(md.Meta['date'][0]),
         'body': html,
     })
+    
+    # display posts nicely in chronological order
+    posts.sort(key=operator.itemgetter('date'), reverse=True)
 
 if __name__ == '__main__':
     conf = {
