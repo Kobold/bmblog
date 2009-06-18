@@ -24,6 +24,8 @@ environment.filters['date'] = date
 
 
 def load_posts():
+    os.system('cd %s && git pull' % post_directory)
+    
     global posts
     global posts_by_slug
     posts = []
