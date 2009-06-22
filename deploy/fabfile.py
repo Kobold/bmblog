@@ -12,7 +12,7 @@ def deploy():
 
 def deploy_posts():
     """Pulls the latest posts down to the server."""
-    run('cd domains/boozeandmescaline.com/bmblog2-posts && git pull')
+    run('cd domains/boozeandmescaline.com/bmblog-posts && git pull')
     restart_apache()
 
 def restart_apache():
