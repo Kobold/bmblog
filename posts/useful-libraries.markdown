@@ -8,6 +8,17 @@ it strikes me.
 Libraries I Like
 ----------------
 
+**[Fabric](http://fabfile.org/)** "Fabric is a Python library and command-line
+tool designed to streamline deploying applications or performing system
+administration tasks via the SSH protocol." I wanted to get into Capistrano,
+but from what I've heard it's gotten more Rails-oriented and I do Python stuff
+mostly. I could [adapt it to
+Django](http://playgroundblues.com/posts/2008/mar/17/capistrano-rules/), but
+why leave python? Especially after the latest refactoring, Fabric does
+everything I want it to do and it does it well. I'm not really a shell
+scripter, so being able to use Python to slice-'n-dice in Fabric scripts is
+doubly nice for me.
+
 **[flot](http://code.google.com/p/flot/)** A pure canvas/JS plotting library
 that is very flexible and generates pretty graphs. It's API is clean and very
 javascript-esque. One particularly nice feature that's not present in a lot of
