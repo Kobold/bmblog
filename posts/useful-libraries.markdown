@@ -43,6 +43,13 @@ heavyweight](http://mail.python.org/pipermail/python-3000/2006-September/003718.
 and it [hasn't been updated since 2004](http://candygram.sourceforge.net/). I
 can't get the repo without CVS... eww.
 
+**[Hashdot](http://hashdot.sourceforge.net/)** "Hashdot elevates Java-platform
+script interpreters to first class status on Unix-like operating systems. It
+provides a script aware replacement to the stock `java` launcher, and thus
+avoids numerous issues in using the `java` launcher to bootstrap a script
+interpreter." When experimenting with Clojure I ended up writing my own shell
+script launcher to solve exactly this problem. I found this via [technomancy](http://technomancy.us/121).
+
 **[pysage](http://code.google.com/p/pysage/)** "pysage is a lightweight
 high-level message passing [Python] library supporting actor based
 concurrency." This project is more active than Candygram as well as a bit more
