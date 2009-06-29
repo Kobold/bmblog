@@ -13,8 +13,6 @@ TEMPLATE_ROOT = os.path.join(PROJECT_ROOT, 'templates')
 
 environment = Environment(loader=FileSystemLoader(TEMPLATE_ROOT))
 post_directory = os.environ['BMBLOG_POST_DIRECTORY']
-posts = [] # in memory list of posts that is loaded at startup
-posts_by_slug = {}
 
 
 def date(value, format='%B %e, %Y'):
@@ -22,52 +20,32 @@ def date(value, format='%B %e, %Y'):
     return value.strftime(format)
 environment.filters['date'] = date
 
-
-def load_posts():
-    os.system('cd %s && git pull' % post_directory)
-    
-    global posts
-    global posts_by_slug
-    posts = []
-    posts_by_slug = {}
+def post_iterator():
     post_files = [f for f in os.listdir(post_directory)
                     if f.endswith('.markdown')]
     for f in post_files:
         md = markdown.Markdown(extensions=['meta'])
         text = file(os.path.join(post_directory, f)).read().decode('utf-8')
         html = md.convert(text)
-        post = {
+        yield {
             'title': md.Meta['title'][0],
             'slug': f[:-9], # slice off the .markdown to create the slug
             'date': dateutil.parser.parse(md.Meta['date'][0]),
             'body': html,
         }
 
-        posts_by_slug[post['slug']] = post
-        posts.append(post)
-    
-    # display posts nicely in chronological order
-    posts.sort(key=operator.itemgetter('date'), reverse=True)
-
 
 class Blog(object):
     @cherrypy.expose
     def index(self):
-        template = environment.get_template('index.html')
-        return template.render(posts=posts)
+        posts = sorted(post_iterator(),
+                       key=operator.itemgetter('date'), reverse=True)
+        return environment.get_template('index.html').render(posts=posts)
     
     @cherrypy.expose
     def post(self, slug):
-        template = environment.get_template('post.html')
-        return template.render(post=posts_by_slug[slug])
-    
-    @cherrypy.expose
-    def reload(self):
-        load_posts()
-        raise cherrypy.HTTPRedirect('/')
-
-# load the posts on startup
-load_posts()
+        post = dict((p['slug'], p) for p in post_iterator())[slug]
+        return environment.get_template('post.html').render(post=post)
 
 configuration = {
     '/': {
