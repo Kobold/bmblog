@@ -76,6 +76,7 @@ width: 1000px;
 #content {
 float: left;
 width: 650px;
+margin-bottom: 80px;
 }
 #sidebar {
 float: right;
@@ -118,6 +119,12 @@ margin: 15px 0px;
 p, #content ol, #content ul {
 margin:1.75em 0;
 line-height: 1.4em;
+}
+#post-list {
+margin-top: 1em;
+}
+#post-list td.title {
+padding-left: 2em;
 }
 
 /* styling for misc elements */

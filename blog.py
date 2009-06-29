@@ -40,7 +40,8 @@ class Blog(object):
     def index(self):
         posts = sorted(post_iterator(),
                        key=operator.itemgetter('date'), reverse=True)
-        return environment.get_template('index.html').render(posts=posts)
+        template = environment.get_template('index.html')
+        return template.render(first=posts[0], rest=posts[1:])
     
     @cherrypy.expose
     def post(self, slug):
