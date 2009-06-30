@@ -1,5 +1,5 @@
 Title: Useful Libraries
-Date: 2009-06-21
+Date: 2009-06-30
 
 There's nothing better than finding a library that does exactly what you're
 looking for with a clean and sane API. I'll gradually add to this posting as
@@ -28,6 +28,12 @@ Libraries I Haven't Tried--Yet
 
 These libraries look interesting if I ever need them. I haven't tried them
 yet, so no endorsements, but they look good.
+
+**[Synesketch](http://www.synesketch.krcadinac.com/)** OMG, so cool. It's a
+text textual emotion recognition and visualization engine. What does that
+mean? Have a look at [some of Syneketch's pictures](
+http://www.natpryce.com/articles/000748.html). I can't wait to make something
+with it!
 
 **[Really Simple History](http://code.google.com/p/reallysimplehistory/)**
 "Really Simple History is a lightweight JavaScript library for the management
