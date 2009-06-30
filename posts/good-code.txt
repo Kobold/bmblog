@@ -1,0 +1,22 @@
+One fancy synonym for "testable" is "hexagonal architecture" [1]. Hexagonal
+architecture allows for applications to be "equally be driven by users,
+programs, automated test or batch scripts". So really, testability is just a
+good heuristic for a hexagonal architecture. One interesting thing is how a
+lot of this comes for free with a purely functional system. Not only can
+program components be driven by uses within the program and a unit testing
+system, Quickcheck is smart enough to drive a program component and expose
+errors. The other interesting thing is monads (IO in particular). What if you
+could enforce separation of interface code and business logic code via the
+type system? Monads aren't exactly that, but they are a significant step
+towards it.
+
+Code without getters somehow fits in to this:
+http://peripateticaxiom.blogspot.com/2008/06/tdd-mocks-and-design.html
+
+
+Inspired by: http://peripateticaxiom.blogspot.com/2009/06/lets-talk-about-feelings.html
+
+
+
+
+[1] http://alistair.cockburn.us/Hexagonal+architecture
