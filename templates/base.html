@@ -14,8 +14,17 @@
 <body>
 
 <div id="content">
-  {% block content %}{% endblock %}
+  <div class="header">
+    <h1><a href="{{ item|url }}">{{ item.title }}</a></h1>
+    {% if item.date %}
+      <p>{{ item.date|date }}</p>
+    {% endif %}
+  </div>
+  <div class="post">{{ item.body }}</div>
+
+  {% block bottom_content %}{% endblock %}
 </div>
+
 <div id="sidebar">
   <a href="/"><img id="logo" src="/static/mescaline.png" alt="mescaline"></a>
   <div class="section">

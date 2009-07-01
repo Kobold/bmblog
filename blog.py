@@ -20,6 +20,12 @@ def date(value, format='%B %e, %Y'):
     return value.strftime(format)
 environment.filters['date'] = date
 
+
+def url(item):
+    return u'/%s/%s/' % (item['type'], item['slug'])
+environment.filters['url'] = url
+
+
 def parse_files():
     md_files = [f for f in os.listdir(post_directory)
                 if f.endswith('.markdown')]
@@ -35,6 +41,7 @@ def parse_files():
             'title': md.Meta['title'][0],
             'slug': f[:-9], # slice off the .markdown to create the slug
             'body': html,
+            'type': type,
         }
         if type == 'post':
             md_dict.update({'date': dateutil.parser.parse(md.Meta['date'][0])})
@@ -51,21 +58,22 @@ class Blog(object):
         posts, pages = parse_files()
         posts = sorted(posts, key=operator.itemgetter('date'), reverse=True)
         template = environment.get_template('index.html')
-        return template.render(first=posts[0], rest=posts[1:], pages=pages)
+        return template.render(item=posts[0], older_posts=posts[1:],
+                               pages=pages)
     
     @cherrypy.expose
     def page(self, slug):
         posts, pages = parse_files()
         page = dict((p['slug'], p) for p in pages)[slug]
         template = environment.get_template('post.html')
-        return template.render(post=page, pages=pages)
+        return template.render(item=page, pages=pages)
 
     @cherrypy.expose
     def post(self, slug):
         posts, pages = parse_files()
         post = dict((p['slug'], p) for p in posts)[slug]
         template = environment.get_template('post.html')
-        return template.render(post=post, pages=pages)
+        return template.render(item=post, pages=pages)
 
 configuration = {
     '/': {

@@ -1,17 +1,10 @@
 {% extends "base.html" %}
 
-{% block title %}{{ post.title }} | {{ super() }}{% endblock %}
+{% block title %}{{ item.title }} | {{ super() }}{% endblock %}
 
-{% block content %}
-<div class="header">
-  <h1>{{ post.title }}</h1>
-  {% if post.date %}
-    <p>{{ post.date|date }}</p>
-  {% endif %}
-</div>
-<div class="post">{{ post.body }}</div>
-
-{# belew is all the Disqus comment thread stuff #}
+{% block bottom_content %}
+{# below is all the Disqus comment thread stuff #}
+<h2>Comments</h2>
 <div id="disqus_thread"></div>
 <script type="text/javascript" src="http://disqus.com/forums/boozeandmescaline/embed.js"></script>
 <noscript>

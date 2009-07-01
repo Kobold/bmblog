@@ -1,20 +1,14 @@
 {% extends "base.html" %}
 
-{% block content %}
-
-<div class="header">
-  <h1><a href="/post/{{ first.slug }}/">{{ first.title }}</a></h1>
-  <p>{{ first.date|date }}</p>
-</div>
-<div class="post">{{ first.body }}</div>
+{% block bottom_content %}
 
 <h2>Older Posts</h2>
 <table id="post-list">
-{% for post in rest %}
+{% for post in older_posts %}
   <tr>
     <td>{{ post.date|date }}</td>
     <td class="title">
-      <strong><a href="/post/{{ post.slug }}/">{{ post.title }}</a></strong>
+      <strong><a href="{{ post|url }}">{{ post.title }}</a></strong>
     </td>
   </tr>
 {% endfor %}
