@@ -19,6 +19,15 @@
 <div id="sidebar">
   <a href="/"><img id="logo" src="/static/mescaline.png" alt="mescaline"></a>
   <div class="section">
+    <h1>my stuff</h1>
+    <ul>
+    {% for page in pages %}
+      <li><a href="/page/{{ page.slug }}/">{{ page.title }}</a></li>
+    {% endfor %}
+    </ul>
+  </div>
+  
+  <div class="section">
     <h1>projects</h1>
     <ul>
       <li><a href="http://sha1.us">sha1.us</a><br>a git-like url shortening service</li>

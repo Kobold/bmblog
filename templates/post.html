@@ -5,7 +5,9 @@
 {% block content %}
 <div class="header">
   <h1>{{ post.title }}</h1>
-  <p>{{ post.date|date }}</p>
+  {% if post.date %}
+    <p>{{ post.date|date }}</p>
+  {% endif %}
 </div>
 <div class="post">{{ post.body }}</div>
 

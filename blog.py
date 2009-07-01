@@ -51,13 +51,21 @@ class Blog(object):
         posts, pages = parse_files()
         posts = sorted(posts, key=operator.itemgetter('date'), reverse=True)
         template = environment.get_template('index.html')
-        return template.render(first=posts[0], rest=posts[1:])
+        return template.render(first=posts[0], rest=posts[1:], pages=pages)
     
+    @cherrypy.expose
+    def page(self, slug):
+        posts, pages = parse_files()
+        page = dict((p['slug'], p) for p in pages)[slug]
+        template = environment.get_template('post.html')
+        return template.render(post=page, pages=pages)
+
     @cherrypy.expose
     def post(self, slug):
         posts, pages = parse_files()
         post = dict((p['slug'], p) for p in posts)[slug]
-        return environment.get_template('post.html').render(post=post)
+        template = environment.get_template('post.html')
+        return template.render(post=post, pages=pages)
 
 configuration = {
     '/': {
