@@ -76,7 +76,7 @@ width: 1000px;
 #content {
 float: left;
 width: 650px;
-margin-bottom: 80px;
+padding-bottom: 80px;
 }
 #sidebar {
 float: right;
