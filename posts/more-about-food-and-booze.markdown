@@ -1,3 +1,4 @@
+Type: post
 Title: More about food (and booze)
 Date: 2008-06-18 22:34:29
 

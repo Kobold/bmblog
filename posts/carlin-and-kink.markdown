@@ -1,3 +1,4 @@
+Type: post
 Title: Carlin and kink
 Date: 2008-06-25 20:18:40
 

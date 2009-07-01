@@ -1,3 +1,4 @@
+Type: post
 Title: Don't ask
 Date: 2008-06-23 23:59:27
 

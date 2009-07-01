@@ -1,3 +1,4 @@
+Type: post
 Title: Sick Music I've Listened To Recently: Part I
 Date: 2008-08-12 07:33:06
 

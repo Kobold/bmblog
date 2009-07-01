@@ -1,3 +1,4 @@
+Type: post
 Title: Attitudes toward death and killing: Food
 Date: 2008-06-17 21:41:37
 

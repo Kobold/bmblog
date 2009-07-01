@@ -1,3 +1,4 @@
+Type: post
 Title: Useful Libraries
 Date: 2009-06-30
 
