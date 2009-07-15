@@ -13,6 +13,7 @@ towards it.
 Code without getters somehow fits in to this:
 http://peripateticaxiom.blogspot.com/2008/06/tdd-mocks-and-design.html
 
+Also, look up data driven programming
 
 Inspired by: http://peripateticaxiom.blogspot.com/2009/06/lets-talk-about-feelings.html
 
