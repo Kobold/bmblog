@@ -57,12 +57,7 @@ avoids numerous issues in using the `java` launcher to bootstrap a script
 interpreter." When experimenting with Clojure I ended up writing my own shell
 script launcher to solve exactly this problem. I found this via [technomancy](http://technomancy.us/121).
 
-**[pysage](http://code.google.com/p/pysage/)** "pysage is a lightweight
-high-level message passing [Python] library supporting actor based
-concurrency." This project is more active than Candygram as well as a bit more
-Pythonic. From what I've examined of the API, pysage makes a distinction
-between messages that go across the network and those that do not, which irks
-me a bit. I need to dig further to substantiate this, however.
-
-**[Pyro](http://pyro.sourceforge.net/)** "Pyro is short for PYthon Remote
-Objects." Not as elegant as message passing, but it gets the job done.
+**[Protovis](http://vis.stanford.edu/protovis/)** "is a visualization toolkit
+for JavaScript using SVG. It takes a graphical approach to data visualization,
+composing custom views of data with simple graphical primitives like bars and
+dots." Pretty. The more ways to do pretty stuff via javascript, the better.
