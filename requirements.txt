@@ -1,4 +1,5 @@
 CherryPy
+Fabric
 Jinja2
 Markdown
 python-dateutil
