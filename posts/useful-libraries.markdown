@@ -61,3 +61,8 @@ script launcher to solve exactly this problem. I found this via [technomancy](ht
 for JavaScript using SVG. It takes a graphical approach to data visualization,
 composing custom views of data with simple graphical primitives like bars and
 dots." Pretty. The more ways to do pretty stuff via javascript, the better.
+
+
+**[Ottoman](http://bitbucket.org/snej/ottoman/wiki/Home)** "Ottoman is
+a lightweight, reliable key-value store with multi-version concurrency
+control."
