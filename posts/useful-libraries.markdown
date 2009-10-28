@@ -19,6 +19,11 @@ everything I want it to do and it does it well. I'm not really a shell
 scripter, so being able to use Python to slice-'n-dice in Fabric scripts is
 doubly nice for me.
 
+**[chain.js](http://wiki.github.com/raid-ox/chain.js/)** This is javascript
+templating done right. Rather than the usual templating languages that are a
+mishmash of markup and javascript, this is a simple declarative way to splat
+data into your HTML.
+
 **[flot](http://code.google.com/p/flot/)** A pure canvas/JS plotting library
 that is very flexible and generates pretty graphs. It's API is clean and very
 javascript-esque. One particularly nice feature that's not present in a lot of
@@ -39,6 +44,11 @@ with it!
 **[Really Simple History](http://code.google.com/p/reallysimplehistory/)**
 "Really Simple History is a lightweight JavaScript library for the management
 of bookmarking and browser history in Ajax/DHTML applications."
+
+**[Underscore](http://documentcloud.github.com/underscore/)** "Underscore is a
+utility-belt library for Javascript that provides a lot of the functional
+programming support that you would expect in Prototype.js (or Ruby), but
+without extending any of the built-in Javascript objects."
 
 **[Candygram](http://candygram.sourceforge.net/)** "Candygram is a Python
 implementation of Erlang concurrency primitives. Erlang is widely respected
