@@ -76,3 +76,14 @@ dots." Pretty. The more ways to do pretty stuff via javascript, the better.
 **[Ottoman](http://bitbucket.org/snej/ottoman/wiki/Home)** "Ottoman is
 a lightweight, reliable key-value store with multi-version concurrency
 control."
+
+**[Libtask](http://swtch.com/libtask/)** "Libtask is a simple coroutine
+library... Libtask gives the programmer the illusion of threads, but the
+operating system sees only a single kernel thread.  For clarity, we refer to
+the coroutines as "tasks," not threads."
+
+**[libslack](http://libslack.org/)** "Libslack is a library of general
+utilities designed to make UNIX/C programming a bit easier on the eye."
+There's lots of good stuff here. Particularly interesting are the tools for
+writing daemons, the network abstractions, and an agent orient programming
+system!
