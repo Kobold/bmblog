@@ -1,5 +1,5 @@
 Type: page
-Title: Summaries of Books I've Read
+Title: Books I've Read
 Date: 2009-10-24
 
 October 24, 2009 **[Blindsight by Peter Watts][watts]**
