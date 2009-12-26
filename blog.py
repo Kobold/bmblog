@@ -1,18 +1,20 @@
 # -*- coding: utf-8 -*-
 from jinja2 import Environment, FileSystemLoader
-import cherrypy
 import dateutil.parser
 import markdown
 import operator
 import os
+import shutil
 
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 TEMPLATE_ROOT = os.path.join(PROJECT_ROOT, 'templates')
+POST_DIRECTORY = os.path.join(PROJECT_ROOT, 'posts')
+STATIC_DIRECTORY = os.path.join(PROJECT_ROOT, 'static')
+OUTPUT_DIRECTORY = os.path.join(PROJECT_ROOT, 'output')
 
 
 environment = Environment(loader=FileSystemLoader(TEMPLATE_ROOT))
-post_directory = os.environ['BMBLOG_POST_DIRECTORY']
 
 
 def date(value, format='%B %e, %Y'):
@@ -27,13 +29,13 @@ environment.filters['url'] = url
 
 
 def parse_files():
-    md_files = [f for f in os.listdir(post_directory)
+    md_files = [f for f in os.listdir(POST_DIRECTORY)
                 if f.endswith('.markdown')]
     
     posts, pages = [], []
     for f in md_files:
         md = markdown.Markdown(extensions=['meta'])
-        text = file(os.path.join(post_directory, f)).read().decode('utf-8')
+        text = file(os.path.join(POST_DIRECTORY, f)).read().decode('utf-8')
         html = md.convert(text)
         
         type = md.Meta['type'][0]
@@ -52,40 +54,31 @@ def parse_files():
     return posts, pages
 
 
-class Blog(object):
-    @cherrypy.expose
-    def index(self):
-        posts, pages = parse_files()
+if __name__ == '__main__':
+    if os.path.exists(OUTPUT_DIRECTORY):
+        shutil.rmtree(OUTPUT_DIRECTORY)
+    
+    os.mkdir(OUTPUT_DIRECTORY)
+    shutil.copytree(STATIC_DIRECTORY, os.path.join(OUTPUT_DIRECTORY, 'static'))
+    
+    posts, pages = parse_files()
+    with file(os.path.join(OUTPUT_DIRECTORY, 'index.html'), 'w') as f:
         posts = sorted(posts, key=operator.itemgetter('date'), reverse=True)
         template = environment.get_template('index.html')
-        return template.render(item=posts[0], older_posts=posts[1:],
-                               pages=pages)
+        f.write(template.render(item=posts[0], older_posts=posts[1:],
+                                pages=pages).encode('utf-8'))
     
-    @cherrypy.expose
-    def page(self, slug):
-        posts, pages = parse_files()
-        page = dict((p['slug'], p) for p in pages)[slug]
-        template = environment.get_template('post.html')
-        return template.render(item=page, pages=pages)
+    os.mkdir(os.path.join(OUTPUT_DIRECTORY, 'page'))
+    for p in pages:
+        filename = os.path.join(OUTPUT_DIRECTORY, 'page', p['slug'] + '.html')
+        with file(filename, 'w') as f:
+            template = environment.get_template('post.html')
+            f.write(template.render(item=p, pages=pages).encode('utf-8'))
 
-    @cherrypy.expose
-    def post(self, slug):
-        posts, pages = parse_files()
-        post = dict((p['slug'], p) for p in posts)[slug]
-        template = environment.get_template('post.html')
-        return template.render(item=post, pages=pages)
+    os.mkdir(os.path.join(OUTPUT_DIRECTORY, 'post'))
+    for p in posts:
+        filename = os.path.join(OUTPUT_DIRECTORY, 'post', p['slug'] + '.html')
+        with file(filename, 'w') as f:
+            template = environment.get_template('post.html')
+            f.write(template.render(item=p, pages=pages).encode('utf-8'))
 
-configuration = {
-    '/': {
-        'tools.encode.on': True,
-        'tools.encode.encoding': 'utf8',
-        'tools.staticdir.root': PROJECT_ROOT
-    },
-    '/static': {
-        'tools.staticdir.on': True,
-        'tools.staticdir.dir': 'static',
-    },
-}
-
-if __name__ == '__main__':
-    cherrypy.quickstart(Blog(), config=configuration)
