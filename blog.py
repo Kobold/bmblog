@@ -69,15 +69,9 @@ if __name__ == '__main__':
                                 pages=pages).encode('utf-8'))
     
     os.mkdir(os.path.join(OUTPUT_DIRECTORY, 'page'))
-    for p in pages:
-        filename = os.path.join(OUTPUT_DIRECTORY, 'page', p['slug'] + '.html')
-        with file(filename, 'w') as f:
-            template = environment.get_template('post.html')
-            f.write(template.render(item=p, pages=pages).encode('utf-8'))
-
     os.mkdir(os.path.join(OUTPUT_DIRECTORY, 'post'))
-    for p in posts:
-        filename = os.path.join(OUTPUT_DIRECTORY, 'post', p['slug'] + '.html')
+    for p in pages + posts:
+        filename = os.path.join(OUTPUT_DIRECTORY, p['type'], p['slug'] + '.html')
         with file(filename, 'w') as f:
             template = environment.get_template('post.html')
             f.write(template.render(item=p, pages=pages).encode('utf-8'))
