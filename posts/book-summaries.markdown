@@ -1,6 +1,32 @@
 Type: page
 Title: Books I've Read
-Date: 2009-10-24
+Date: 2009-12-31
+
+December 28, 2009 **The Catcher in the Rye by J. D. Salinger**
+
+Holden's immaturity pisses me off. He's unwilling to like or enjoy
+anything. After going to a jazz bar he decides that everyone there is a "phony"
+and promptly leaves. During a date that he arranged with a girl, he decides that
+he isn't enjoying himself and that she's "phony". He always has to find
+something wrong with his personal situation. Hypocrisy is especially evident
+when he declares something "phony" but then does exactly that the next day,
+multiple times. Holden keeps a safe, cynical distance from everything. Would it
+kill him to enjoy something for once!?!
+
+When I was in high school I attempted to read Catcher at some point, can't
+remember when. I could relate a little more to Holden at that point, but I was
+still turned off and did not finish the book. I'm glad I finished it this
+time--the first three quarters of the book only show what a mess Holden
+is. Salinger only offers some analysis of Holden's situation at the end, in the
+form of Phoebe and Mr. Antolini. The title is funny in light of Holden's desire
+to be the Catcher. The Catcher is a pretty clear metaphor for his unwillingness
+to accept adulthood.
+
+Two analyses that influenced my thoughts:
+
+* [Immaturity: A Meditation of Sorts by Jon Lee][lee]
+* [The Fallen Idol: The Immature World of Holden Caulfield by Peter
+  J. Seng][seng]
 
 October 24, 2009 **[Blindsight by Peter Watts][watts]**
 
@@ -36,5 +62,7 @@ killed for doing so.
 Meh. Golding fetishizes civilisation too much for my taste.
 
 
+[lee]: http://thesop.org/crazyworld/2008/09/13/immaturity-a-meditation-of-sorts
 [lof]: http://en.wikipedia.org/wiki/Lord_of_the_Flies
+[seng]: http://www.docstoc.com/docs/14300324/The-Fallen-Idol-The-Immature-World-of-Holden-Caulfield
 [watts]: http://www.rifters.com/real/Blindsight.htm
