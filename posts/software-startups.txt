@@ -1,0 +1,43 @@
+Idea chunks developed in India during April 2010:
+
+Using you own softare is important. That way ou know it solves the problem that
+it needs to and it does so without being too much of a pain in the ass. Eat your
+own dog food.
+
+
+Don't be too attached to your ideas. Your initial assumptions that underlie the
+idea are almost certain to be wrong. The best we can do is test those
+assumptions--discarding them if necessary--and arrive at a better idea.
+
+
+The strengeth of small startups is their speed and agility. With no beaurocracy
+to go through and little investment in their ideas they can afford to throw
+everything away if it's not working. Conversely, if you're a startup and your
+idea is not evolving quickly, you're going to fail.
+
+
+Ideas are not the valuable resource, they are a dime a dozen. No single idea
+will make everything easy and make you rich. Time is the most valuable resource.
+- hence agility
+- reddit post that convinced me to leave CC
+
+
+Ask people what their problems are then solve it and sell the solution to
+them. Don't make something first, then try to convince people it's what they
+want.
+- Steve Blank's customer development vs. product development
+- make it so they need you
+
+
+Testing your assumption is important, but it's difficult to interpret the
+results of complex tests. Try to make your tests as simple and quantitative as
+possible so tehir results are unambiguous.
+- CC software...
+
+
+Resist the urge to technical masturbation. With a bunch of techies it's easy to
+fritter away your time talking about algorithms. A good algorithm is not
+sufficient for success though, and it's almost certainly non-technical factors
+that are holding you back.
+- coding seems productive but time is better spent thinking hard about what
+you're doing
