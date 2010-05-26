@@ -50,6 +50,18 @@ utility-belt library for Javascript that provides a lot of the functional
 programming support that you would expect in Prototype.js (or Ruby), but
 without extending any of the built-in Javascript objects."
 
+**[eCSStender](http://ecsstender.org/)** A Javascript library that enables
+extensions to CSS such as CSS 3 colors, selectors, and such--even for browsers
+that don't support them.
+
+**[Modernizr](http://www.modernizr.com/)** "Modernizr is a small and simple
+JavaScript library that helps you take advantage of emerging web technologies
+(CSS3, HTML 5) while still maintaining a fine level of control over older
+browsers that may not yet support these new technologies."
+
+**[ie7-js](http://code.google.com/p/ie7-js/)** "A JavaScript library to make
+MSIE behave like a standards-compliant browser." This one sounds awesome.
+
 **[Candygram](http://candygram.sourceforge.net/)** "Candygram is a Python
 implementation of Erlang concurrency primitives. Erlang is widely respected
 for its elegant built-in facilities for concurrent programming. This package
