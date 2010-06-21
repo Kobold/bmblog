@@ -72,6 +72,9 @@ heavyweight](http://mail.python.org/pipermail/python-3000/2006-September/003718.
 and it [hasn't been updated since 2004](http://candygram.sourceforge.net/). I
 can't get the repo without CVS... eww.
 
+**[Flask](http://flask.pocoo.org/docs/)** "Flask is a micro web development
+framework for Python." There are lots of these but I like Armin Ronacher's style.
+
 **[Hashdot](http://hashdot.sourceforge.net/)** "Hashdot elevates Java-platform
 script interpreters to first class status on Unix-like operating systems. It
 provides a script aware replacement to the stock `java` launcher, and thus
