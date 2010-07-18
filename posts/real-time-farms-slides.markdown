@@ -22,7 +22,7 @@ market site should be without up to date photos!
 
 <script type="text/javascript"
         src="http://www.realtimefarms.com/slides/slideshow.js?market=ann-arbor-farmers-market"></script>
-<div id="realtimefarms-slides" style="height: 400px; width: 550px;">
+<div id="realtimefarms-slides" style="height: 400px; width: 550px; margin-left: auto; margin-right: auto;">
     <a href="http://www.realtimefarms.com/market/ann-arbor-farmers-market">
         Ann Arbor Farmers Market on Real Time Farms
     </a>
